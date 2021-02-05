@@ -1,6 +1,6 @@
 {
   "name": "graphql2js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Generate js files from .graphql files, so you can import them",
   "main": "bin/index.js",
   "author": "Dobes Vandermeer",
