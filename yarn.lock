@@ -55,10 +55,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:11.13.8":
+"@types/node@npm:*":
   version: 11.13.8
   resolution: "@types/node@npm:11.13.8"
   checksum: 6c1177cebc8c092f301202c42bf9a6c819b4b1edf1cee55f4adb964e52c1ed69fb4d890327a8990b61d8d859567f05ca2fc03c94434cd33f324fb4ebd3df3729
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:11.15.44":
+  version: 11.15.44
+  resolution: "@types/node@npm:11.15.44"
+  checksum: 4e543d004b9debb5527322227946191b918c07daad78fd2cc801366701848cb3642d7bead4411fe57b485a6fe287cf7cfb785cc979712f23228e951ec67dad49
   languageName: node
   linkType: hard
 
@@ -526,7 +533,7 @@ fsevents@^2.0.6:
     "@types/fs-extra": 5.0.5
     "@types/glob": 7.1.1
     "@types/glob-parent": 3.1.1
-    "@types/node": 11.13.8
+    "@types/node": 11.15.44
     chokidar: ">=3"
     commander: ">=7"
     fs-extra: ">=7"
