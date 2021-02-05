@@ -78,19 +78,29 @@ const main = () => {
 
     commander.parse(process.argv);
 
-    if (commander.verbose) {
+    const { verbose, output: outPath, root, watch } = commander.opts();
+    if (verbose) {
       printFilenames = true;
     }
 
-    const outPath = commander.output;
+    if(!outPath) {
+      console.error('Must provide output folder!');
+      process.exit(1);
+    }
     const rootPath =
-      commander.root || require('glob-parent')(commander.args[0]);
+      root || require('glob-parent')(commander.args[0]);
+
+    if(!outPath) {
+      console.error('Root path not provided and could not be derived from input glob!');
+      process.exit(1);
+    }
+
     const listener = (path: string) =>
       updatePath(
         path,
         resolvePath(outPath, relativePath(rootPath || '', path + '.js')),
       );
-    if (commander.watch) {
+    if (watch) {
       const watcher = chokidar.watch(commander.args, {
         ignored: /(^|[\/\\])\../,
         persistent: true,
