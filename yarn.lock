@@ -14,13 +14,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/events@npm:*":
-  version: 3.0.0
-  resolution: "@types/events@npm:3.0.0"
-  checksum: 1407d79d6d5291caa89f27ef0f180eb133bc5a12f11886bd68f9ef9cffb962a575571d1b4d02d30a7329fe9b85d29b7c10543ed6dc516ad20f9a1e89c1e9c9b8
-  languageName: node
-  linkType: hard
-
 "@types/fs-extra@npm:9.0.6":
   version: 9.0.6
   resolution: "@types/fs-extra@npm:9.0.6"
@@ -37,14 +30,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/glob@npm:7.1.1":
-  version: 7.1.1
-  resolution: "@types/glob@npm:7.1.1"
+"@types/glob@npm:7.1.3":
+  version: 7.1.3
+  resolution: "@types/glob@npm:7.1.3"
   dependencies:
-    "@types/events": "*"
     "@types/minimatch": "*"
     "@types/node": "*"
-  checksum: f74ae67cb205302da0d452e925529f817a253c4dce5d59ae6077d592238b921db750da143b8a5f8427a5011e202937d8a7b264f7d14b0ddc7f8137ca5e1af1b6
+  checksum: 633bf1dda9a30899b233ed6b97c75cdd59f2ee856a12240c85474ce6889e26b3b3520b62de56f6bb61824af0ef51b311a0cae305f27ba0de8ddc4898a3673d42
   languageName: node
   linkType: hard
 
@@ -531,7 +523,7 @@ fsevents@^2.0.6:
   dependencies:
     "@types/chokidar": 2.1.3
     "@types/fs-extra": 9.0.6
-    "@types/glob": 7.1.1
+    "@types/glob": 7.1.3
     "@types/glob-parent": 3.1.1
     "@types/node": 11.15.44
     chokidar: ">=3"
