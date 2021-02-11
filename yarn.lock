@@ -21,12 +21,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/fs-extra@npm:5.1.0":
-  version: 5.1.0
-  resolution: "@types/fs-extra@npm:5.1.0"
+"@types/fs-extra@npm:9.0.6":
+  version: 9.0.6
+  resolution: "@types/fs-extra@npm:9.0.6"
   dependencies:
     "@types/node": "*"
-  checksum: 5282d895bbc37bdf4658a79b51cff4cf94df2a3b7e3b5c651e298a9975fe97977b1fbcae9dc805918a81dd9c57e5a28dad0b501f2f3e7ea69e0e6bef30ba6737
+  checksum: 8a5df0d8e4b3590a6c9bc6db050143b1cbd742566a2aaac4ed3679bcb607756fb2d6d4ff896a304f3c4603fd996a6ba085a64310deb13839dfc7663351b5b626
   languageName: node
   linkType: hard
 
@@ -523,7 +523,7 @@ fsevents@^2.0.6:
   resolution: "graphql2js@workspace:."
   dependencies:
     "@types/chokidar": 2.1.3
-    "@types/fs-extra": 5.1.0
+    "@types/fs-extra": 9.0.6
     "@types/glob": 7.1.1
     "@types/glob-parent": 3.1.1
     "@types/node": 11.13.8
