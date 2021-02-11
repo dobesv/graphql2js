@@ -23,10 +23,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/glob-parent@npm:3.1.1":
-  version: 3.1.1
-  resolution: "@types/glob-parent@npm:3.1.1"
-  checksum: 7c44e2204d9bca8132253f783a32496d1b1f06fe6350f6e14d6ec1df4459645a49c0c8655bc13cc1eb95a3ff5ec866a23395418f0b46472f293ee5f7be1684b3
+"@types/glob-parent@npm:5.1.0":
+  version: 5.1.0
+  resolution: "@types/glob-parent@npm:5.1.0"
+  checksum: 99f5f01435c218f8c39d6701a34e128e046ea6a7c5e1bfda65169f4b546810529c7dcf72f5ce1e211abe160f99b5c36139c05c8aa17499c0fbcad6bb2858da7a
   languageName: node
   linkType: hard
 
@@ -524,7 +524,7 @@ fsevents@^2.0.6:
     "@types/chokidar": 2.1.3
     "@types/fs-extra": 9.0.6
     "@types/glob": 7.1.3
-    "@types/glob-parent": 3.1.1
+    "@types/glob-parent": 5.1.0
     "@types/node": 11.15.44
     chokidar: ">=3"
     commander: ">=7"
