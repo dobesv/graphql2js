@@ -539,7 +539,7 @@ fsevents@^2.0.6:
     fs-extra: ">=7"
     glob: ">=7"
     glob-parent: ">=5"
-    graphql: 14.2.1
+    graphql: 15.5.0
     graphql-tag: ">=2"
     typescript: 4.1.5
   peerDependencies:
@@ -549,12 +549,10 @@ fsevents@^2.0.6:
   languageName: unknown
   linkType: soft
 
-"graphql@npm:14.2.1":
-  version: 14.2.1
-  resolution: "graphql@npm:14.2.1"
-  dependencies:
-    iterall: ^1.2.2
-  checksum: f49af38c0bb6095d4d36b92844b0466e39f2f29c46453f84d53fe7ac5c07b90c3cb0472a7b85eae94cdbd2335387dde8c43262cba0717250279da750164b2c7f
+"graphql@npm:15.5.0":
+  version: 15.5.0
+  resolution: "graphql@npm:15.5.0"
+  checksum: 789cdcb069a3e00592e779002217a6bc5fd09efad63ee8c4190c4b3ea96c89010e74f085fb1cba876a0bb0e324e01df2eddb84d79dca90a28e582bc425fef9ef
   languageName: node
   linkType: hard
 
@@ -690,13 +688,6 @@ fsevents@^2.0.6:
   version: 0.1.2
   resolution: "isstream@npm:0.1.2"
   checksum: 8e6e5c4cf1823562db7035d2e7bac388412060fe9bc6727eca8c608def5aa57709165c51c2e68a2fce6ff0b64d79489501b84715060c5e8a477b87b6cbcd1eca
-  languageName: node
-  linkType: hard
-
-"iterall@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "iterall@npm:1.2.2"
-  checksum: 798a4b7fac39a5b914165dd945dddd4ea8bd3d31c485ffb5de87b54957fe9b4136a9d23aa6b9a433759dec7cf845a7346dfb37ae6765cf30799d277b3250207d
   languageName: node
   linkType: hard
 
