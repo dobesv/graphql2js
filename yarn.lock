@@ -541,7 +541,7 @@ fsevents@^2.0.6:
     glob-parent: ">=5"
     graphql: 14.2.1
     graphql-tag: ">=2"
-    typescript: 3.4.5
+    typescript: 4.1.5
   peerDependencies:
     graphql: ">=14"
   bin:
@@ -1170,23 +1170,23 @@ fsevents@^2.0.6:
   languageName: node
   linkType: hard
 
-typescript@3.4.5:
-  version: 3.4.5
-  resolution: "typescript@npm:3.4.5"
+typescript@4.1.5:
+  version: 4.1.5
+  resolution: "typescript@npm:4.1.5"
   bin:
-    tsc: ./bin/tsc
-    tsserver: ./bin/tsserver
-  checksum: 333a73f975c3247c53bd7fb5d73e7bf41fda34f7a6c007854f04a1a9d221bcc70a1935841b276b6f9c5f60efff43a0de24e29105e4ca491277d75d8ba19ac43e
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 29157c84426ac94ce97aac836264f303a26bd9fb30865650229e3406a36ca2e89735ef4b8878075ba1b95fa4d3ff9810057b64888700c28e20b4034a6db4da83
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@3.4.5#builtin<compat/typescript>":
-  version: 3.4.5
-  resolution: "typescript@patch:typescript@npm%3A3.4.5#builtin<compat/typescript>::version=3.4.5&hash=cc6730"
+"typescript@patch:typescript@4.1.5#builtin<compat/typescript>":
+  version: 4.1.5
+  resolution: "typescript@patch:typescript@npm%3A4.1.5#builtin<compat/typescript>::version=4.1.5&hash=cc6730"
   bin:
-    tsc: ./bin/tsc
-    tsserver: ./bin/tsserver
-  checksum: 601dc464fd22eecab6f7e5d5afc60bc16fde1fcde5a3e4e9f5af1c9c30ffe8d9f86fe11a527b142bf92dee783d0a1a559ef759b7f5fa2b3a70b89baf7a6c8d3b
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 58cc7786be0f8485c124944883b1384287532e4867ec37f1fb5cb2811dbc10f7a9decccad89097f924043285f3515bfd8223c61dbb4f88af00b2d8dc2ef73207
   languageName: node
   linkType: hard
 
