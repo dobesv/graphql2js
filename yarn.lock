@@ -531,7 +531,7 @@ fsevents@^2.0.6:
     fs-extra: ">=7"
     glob: ">=7"
     glob-parent: ">=5"
-    graphql: 15.5.0
+    graphql: 15.6.1
     graphql-tag: ">=2"
     typescript: 4.1.5
   peerDependencies:
@@ -541,10 +541,10 @@ fsevents@^2.0.6:
   languageName: unknown
   linkType: soft
 
-"graphql@npm:15.5.0":
-  version: 15.5.0
-  resolution: "graphql@npm:15.5.0"
-  checksum: 789cdcb069a3e00592e779002217a6bc5fd09efad63ee8c4190c4b3ea96c89010e74f085fb1cba876a0bb0e324e01df2eddb84d79dca90a28e582bc425fef9ef
+"graphql@npm:15.6.1":
+  version: 15.6.1
+  resolution: "graphql@npm:15.6.1"
+  checksum: b6ce4fd769d0df5d4e501014f169f29c5e5520f8f913d94a907e04fe221280a58699e7c76f959a68a2d29932e13bfb6529af537eb99e56e5424304da02ddb808
   languageName: node
   linkType: hard
 
