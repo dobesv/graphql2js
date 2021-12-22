@@ -1,6 +1,6 @@
 {
   "name": "graphql2js",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Generate js files from .graphql files, so you can import them",
   "main": "bin/index.js",
   "author": "Dobes Vandermeer",
@@ -27,6 +27,7 @@
     "@types/glob-parent": "^3.1.1",
     "@types/node": "^11.13.8",
     "graphql": ">=14",
-    "typescript": "^3.4.5"
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.4"
   }
 }
