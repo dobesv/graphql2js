@@ -67,7 +67,7 @@ const updatePath = (path: string, outPath: string, emitDeclarations: boolean) =>
 
     const newContent = generate(source);
     const jsChanged = writeIfChanged(outPath, newContent);
-    const tsChanged = emitDeclarations && writeIfChanged(outPath+'.d.ts', typescriptDeclaration);
+    const tsChanged = emitDeclarations && writeIfChanged(outPath.replace(/\.js$/, '.d.ts'), typescriptDeclaration);
     return jsChanged || tsChanged;
   }
 };
