@@ -38,7 +38,14 @@ export const generate = (source: string): string => {
   );
 };
 
-const updatePath = (path: string, outPath: string) => {
+const typescriptDeclaration = [
+  "import { DocumentNode } from 'graphql';",
+  "declare const doc: DocumentNode;",
+  "export default doc;",
+  "",
+].join("\n");
+
+const updatePath = (path: string, outPath: string, emitDeclarations: boolean) => {
   if (!fs.existsSync(path)) {
     if (fs.existsSync(outPath)) {
       fs.unlinkSync(outPath);
@@ -59,7 +66,9 @@ const updatePath = (path: string, outPath: string) => {
     }
 
     const newContent = generate(source);
-    return writeIfChanged(outPath, newContent);
+    const jsChanged = writeIfChanged(outPath, newContent);
+    const tsChanged = emitDeclarations && writeIfChanged(outPath+'.d.ts', typescriptDeclaration);
+    return jsChanged || tsChanged;
   }
 };
 
@@ -83,13 +92,19 @@ const main = () => {
       "-d, --root <rootPath>",
       "Dir to consider source files relative to when calculating the output path"
     );
+
+    commander.option(
+        "-t, --emitDeclarations",
+        "Emit .d.ts files along with each .js file"
+    );
+
     commander.option("-v, --verbose", "More output", false);
 
     commander.arguments("<patterns...>");
 
     commander.parse(process.argv);
 
-    const { verbose, output: outPath, root, watch } = commander.opts();
+    const { emitDeclarations, verbose, output: outPath, root, watch } = commander.opts();
     if (verbose) {
       printFilenames = true;
     }
@@ -110,9 +125,9 @@ const main = () => {
     const listener = (path: string) =>
       updatePath(
         path,
-        resolvePath(outPath, relativePath(rootPath || "", path + ".js"))
+        resolvePath(outPath, relativePath(rootPath || "", path + ".js")),
+        emitDeclarations,
       );
-
 
     if (watch) {
       const watcher = chokidar.watch(commander.args, {
@@ -144,7 +159,7 @@ const main = () => {
       console.log({ changedCount, fileCount }, "graphql2js finished.");
     }
 
-    if(!watch) {
+    if (!watch) {
       process.exit(0);
     }
   } catch (e) {

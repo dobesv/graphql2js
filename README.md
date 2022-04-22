@@ -43,3 +43,7 @@ To stay running and watch for file changes after the initial build:
 ### 1.2.0
 
 Changed it so that `--watch` still processes all the files
+
+### 1.3.0
+
+Added option `-t` to emit typescript `.d.ts` files
