@@ -45,29 +45,40 @@ const typescriptDeclaration = [
   "",
 ].join("\n");
 
-const updatePath = (path: string, outPath: string, emitDeclarations: boolean) => {
+const updatePath = (
+  path: string,
+  outPath: string,
+  emitDeclarations: boolean
+) => {
+  const tsOutPath = outPath.replace(/\.js$/, ".d.ts");
+  const tsExists = emitDeclarations && fs.existsSync(tsOutPath);
+  const jsExists = fs.existsSync(outPath);
   if (!fs.existsSync(path)) {
-    if (fs.existsSync(outPath)) {
+    if (jsExists) {
       fs.unlinkSync(outPath);
-      return true;
     }
-    return false;
+    if (tsExists) {
+      fs.unlinkSync(tsOutPath);
+    }
+    return tsExists || jsExists;
   } else {
     const source = fs.readFileSync(path).toString("utf-8");
     const existingFileContent: string = fs.existsSync(outPath)
       ? fs.readFileSync(outPath).toString("utf-8")
       : "";
 
+    const tsChanged =
+      emitDeclarations && writeIfChanged(tsOutPath, typescriptDeclaration);
+
     // Skip generation if the source file body hasn't changed
     // We can detect this because the original source is embedded
     // into the js file as a JSON value
     if (existingFileContent.includes(JSON.stringify(source))) {
-      return false;
+      return tsChanged;
     }
 
     const newContent = generate(source);
     const jsChanged = writeIfChanged(outPath, newContent);
-    const tsChanged = emitDeclarations && writeIfChanged(outPath.replace(/\.js$/, '.d.ts'), typescriptDeclaration);
     return jsChanged || tsChanged;
   }
 };
@@ -94,8 +105,8 @@ const main = () => {
     );
 
     commander.option(
-        "-t, --emitDeclarations",
-        "Emit .d.ts files along with each .js file"
+      "-t, --emitDeclarations",
+      "Emit .d.ts files along with each .js file"
     );
 
     commander.option("-v, --verbose", "More output", false);
@@ -104,7 +115,13 @@ const main = () => {
 
     commander.parse(process.argv);
 
-    const { emitDeclarations, verbose, output: outPath, root, watch } = commander.opts();
+    const {
+      emitDeclarations,
+      verbose,
+      output: outPath,
+      root,
+      watch,
+    } = commander.opts();
     if (verbose) {
       printFilenames = true;
     }
@@ -126,7 +143,7 @@ const main = () => {
       updatePath(
         path,
         resolvePath(outPath, relativePath(rootPath || "", path + ".js")),
-        emitDeclarations,
+        emitDeclarations
       );
 
     if (watch) {
