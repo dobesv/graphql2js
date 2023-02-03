@@ -5,12 +5,41 @@ import * as fs from "fs";
 import glob from "glob";
 import {
   dirname,
+  join as joinPath,
   resolve as resolvePath,
   relative as relativePath,
 } from "path";
 import { mkdirsSync } from "fs-extra";
 
 let printFilenames = false;
+
+/**
+ * Substitute `{projectRoot}` prefix if preset, with the path of the closest
+ * parent folder of the file being processed with a package.json file.
+ *
+ * @param filename File being processed
+ * @param target Target path which may have a `{projectRoot}` prefix
+ */
+const maybeInsertProjectRootInPath = (
+  filename: string,
+  target: string
+): string => {
+  if (target.startsWith("{projectRoot}")) {
+    let projectRoot = joinPath(filename, "..");
+    while (
+      !fs.existsSync(joinPath(projectRoot, "package.json")) &&
+      fs.existsSync(projectRoot)
+    ) {
+      const parent = dirname(projectRoot);
+      if (!(parent && parent !== projectRoot)) {
+        console.log("Unable to find project root for " + filename);
+      }
+      projectRoot = parent;
+    }
+    return target.replace("{projectRoot}", projectRoot);
+  }
+  return target;
+};
 
 const writeIfChanged = (outPath: string, fileContent: string) => {
   const existingFileContent = fs.existsSync(outPath)
@@ -96,12 +125,12 @@ const main = () => {
     );
     commander.option(
       "-o, --output <outPath>",
-      "Directory to write output files into",
+      "Directory to write output files into.  If it starts with {projectRoot} it will be resolved to the nearest parent folder with a package.json file in it.",
       "./bin"
     );
     commander.option(
       "-d, --root <rootPath>",
-      "Dir to consider source files relative to when calculating the output path"
+      "Dir to consider source files relative to when calculating the output path.  If it starts with {projectRoot} it will be resolved to the nearest parent folder with a package.json file in it."
     );
 
     commander.option(
@@ -139,12 +168,15 @@ const main = () => {
       process.exit(1);
     }
 
-    const listener = (path: string) =>
-      updatePath(
-        path,
-        resolvePath(outPath, relativePath(rootPath || "", path + ".js")),
-        emitDeclarations
+    const listener = (path: string) => {
+      const resolvedOutDir = maybeInsertProjectRootInPath(path, outPath);
+      const relativeSourcePath = relativePath(
+        maybeInsertProjectRootInPath(path, rootPath || ""),
+        path + ".js"
       );
+      const resolvedOutPath = resolvePath(resolvedOutDir, relativeSourcePath);
+      return updatePath(path, resolvedOutPath, emitDeclarations);
+    };
 
     if (watch) {
       const watcher = chokidar.watch(commander.args, {

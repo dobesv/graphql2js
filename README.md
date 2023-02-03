@@ -38,6 +38,17 @@ To stay running and watch for file changes after the initial build:
 
 `npx graphql2js -d src -o dist --watch src/**/*.graphql`
 
+### Multi-project building
+
+You can build multiple projects in a monorepo at once, if they use the same input and output
+folders relative to the folder with package.json, by prefixing the folder arguments with `{projectRoot}`:
+
+`yarn graphql2js -d '{projectRoot}/src' -o '{projectRoot}/dist' src/**/*.graphql`
+
+### TypeScript declarations
+
+You can pass the option `-t` and it will output a `.d.ts` file with each `.js` file it generates.
+
 ## History
 
 ### 1.2.0
@@ -47,3 +58,7 @@ Changed it so that `--watch` still processes all the files
 ### 1.3.0
 
 Added option `-t` to emit typescript `.d.ts` files
+
+### 1.4.0
+
+Added `{projectRoot}` support for multi-projects building / watching
