@@ -50,10 +50,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/minimatch@npm:*":
-  version: 3.0.3
-  resolution: "@types/minimatch@npm:3.0.3"
-  checksum: b80259d55b96ef24cb3bb961b6dc18b943f2bb8838b4d8e7bead204f3173e551a416ffa49f9aaf1dc431277fffe36214118628eacf4aea20119df8835229901b
+"@types/minimatch@npm:^5.1.2":
+  version: 5.1.2
+  resolution: "@types/minimatch@npm:5.1.2"
+  checksum: 0391a282860c7cb6fe262c12b99564732401bdaa5e395bee9ca323c312c1a0f45efbf34dce974682036e857db59a5c9b1da522f3d6055aeead7097264c8705a8
   languageName: node
   linkType: hard
 
@@ -268,9 +268,9 @@ __metadata:
   linkType: hard
 
 "commander@npm:>=7":
-  version: 7.0.0
-  resolution: "commander@npm:7.0.0"
-  checksum: 3e264be8d7c0253120836e9426332234d488311462f5910ddcbf1fe34514aee3bf959454e9f6ee7570151472d375f94bcf35376f9f3f34edf7fb415820659905
+  version: 10.0.1
+  resolution: "commander@npm:10.0.1"
+  checksum: 436901d64a818295803c1996cd856621a74f30b9f9e28a588e726b2b1670665bccd7c1a77007ebf328729f0139838a88a19265858a0fa7a8728c4656796db948
   languageName: node
   linkType: hard
 
