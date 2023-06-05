@@ -11,14 +11,14 @@
   "bin": "./bin/index.js",
   "dependencies": {
     "chokidar": ">=3",
-    "commander": ">=7",
+    "commander": ">=10",
     "fs-extra": ">=7",
-    "glob": ">=7",
-    "glob-parent": ">=5",
-    "graphql-tag": ">=2"
+    "glob": ">=8",
+    "glob-parent": ">=6.0.2",
+    "graphql-tag": ">=2.12"
   },
   "peerDependencies": {
-    "graphql": ">=14"
+    "graphql": ">=16"
   },
   "devDependencies": {
     "@types/chokidar": "2.1.3",

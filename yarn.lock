@@ -335,7 +335,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:>=7":
+"commander@npm:>=10":
   version: 10.0.1
   resolution: "commander@npm:10.0.1"
   checksum: 436901d64a818295803c1996cd856621a74f30b9f9e28a588e726b2b1670665bccd7c1a77007ebf328729f0139838a88a19265858a0fa7a8728c4656796db948
@@ -578,7 +578,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob-parent@npm:>=5":
+"glob-parent@npm:>=6.0.2":
   version: 6.0.2
   resolution: "glob-parent@npm:6.0.2"
   dependencies:
@@ -596,7 +596,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:>=7":
+"glob@npm:>=8":
   version: 10.2.6
   resolution: "glob@npm:10.2.6"
   dependencies:
@@ -639,7 +639,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql-tag@npm:>=2":
+"graphql-tag@npm:>=2.12":
   version: 2.12.6
   resolution: "graphql-tag@npm:2.12.6"
   dependencies:
@@ -660,16 +660,16 @@ __metadata:
     "@types/glob-parent": 5.1.1
     "@types/node": 18.16.16
     chokidar: ">=3"
-    commander: ">=7"
+    commander: ">=10"
     fs-extra: ">=7"
-    glob: ">=7"
-    glob-parent: ">=5"
+    glob: ">=8"
+    glob-parent: ">=6.0.2"
     graphql: 16.6.0
-    graphql-tag: ">=2"
+    graphql-tag: ">=2.12"
     prettier: 2.8.8
     typescript: 4.9.5
   peerDependencies:
-    graphql: ">=14"
+    graphql: ">=16"
   bin:
     graphql2js: ./bin/index.js
   languageName: unknown
