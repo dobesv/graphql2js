@@ -1,6 +1,6 @@
 {
   "name": "graphql2js",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "Generate js files from .graphql files, so you can import them",
   "main": "bin/index.js",
   "author": "Dobes Vandermeer",
@@ -10,12 +10,12 @@
   },
   "bin": "./bin/index.js",
   "dependencies": {
-    "chokidar": ">=3",
-    "commander": ">=10",
-    "fs-extra": ">=7",
-    "glob": ">=8",
-    "glob-parent": ">=6.0.2",
-    "graphql-tag": ">=2.12"
+    "chokidar": "^3.5.3",
+    "commander": "^10.0.1",
+    "fs-extra": "^11.1.1",
+    "glob": "^10.2.6",
+    "glob-parent": "^6.0.2",
+    "graphql-tag": "^2.12.6"
   },
   "peerDependencies": {
     "graphql": ">=16"

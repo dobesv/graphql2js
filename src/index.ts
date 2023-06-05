@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 import chokidar from "chokidar";
-import commander from "commander";
+import { program as commander } from "commander";
 import * as fs from "fs";
-import glob from "glob";
+import { sync as globSync } from "glob";
 import {
   dirname,
   join as joinPath,
@@ -197,7 +197,7 @@ const main = () => {
     let fileCount = 0;
     let changedCount = 0;
     for (const pattern of commander.args) {
-      for (const path of glob.sync(pattern)) {
+      for (const path of globSync(pattern)) {
         fileCount += 1;
         if (listener(path)) {
           changedCount += 1;
