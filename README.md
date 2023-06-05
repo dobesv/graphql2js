@@ -10,6 +10,10 @@ For each `.graphql` file in the source folder it will output a `.graphql.js` fil
 
 If a target file already exists and matches the source file, this leaves the output unchanged.
 
+Note that if you are not currently already using `graphql-tag/loader` you may be better off using
+`graphql-codegen` to generate a file you can import uniformly in all environments instead of having
+to have different solutions for different environments (e.g. webpack vs node)
+
 ## Installation
 
 ### Yarn
