@@ -1,3 +1,7 @@
+# Deprecation warning
+
+This package is no longer maintained.  Please use another package like graphql-codegen.
+
 # graphql2js
 
 This script helps you convert graphql operation and schema files into JavaScript files that you can import
