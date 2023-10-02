@@ -85,10 +85,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.16.16":
-  version: 18.16.16
-  resolution: "@types/node@npm:18.16.16"
-  checksum: 0efad726dd1e0bef71c392c708fc5d78c5b39c46b0ac5186fee74de4ccb1b2e847b3fa468da67d62812f56569da721b15bf31bdc795e6c69b56c73a45079ed2d
+"@types/node@npm:18.18.3":
+  version: 18.18.3
+  resolution: "@types/node@npm:18.18.3"
+  checksum: ed97a832179e0cfbb93738021fe16d0bc5c0f34bea35269c23c9dd5f0ecc8be93dbe5efd51630189a099b31786a47c1bde115508831a7245613a55c3ad1a7d6b
   languageName: node
   linkType: hard
 
@@ -665,7 +665,7 @@ __metadata:
     "@types/fs-extra": 11.0.1
     "@types/glob": 8.1.0
     "@types/glob-parent": 5.1.1
-    "@types/node": 18.16.16
+    "@types/node": 18.18.3
     chokidar: ^3.5.3
     commander: ^10.0.1
     fs-extra: ^11.1.1
